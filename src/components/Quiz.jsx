@@ -1,5 +1,6 @@
 import React from "react";
 import { decode } from "html-entities";
+import { useEffect, useState } from "react";
 
 function Quiz({
 	questions,
@@ -18,6 +19,7 @@ function Quiz({
 	totalScore,
 	setTotalScore,
 }) {
+	const [menu, showMenu] = useState(false);
 	return (
 		<div className="pt-10">
 			{loading ? (
@@ -28,7 +30,20 @@ function Quiz({
 				</div>
 			) : (
 				<>
-					<div className="absolute top-5 right-0 flex flex-col items-end justify-end gap-0.5 lg:right-10">
+					<div
+						className="absolute top-4 right-4  md:hidden"
+						onClick={() => showMenu((menu) => !menu)}
+					>
+						<img
+							src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Hamburger_icon.svg"
+							alt="Menu"
+						/>
+					</div>
+					<div
+						className={`menu-items ${
+							menu ? "active" : ""
+						} absolute top-5 right-5 flex flex-col items-end justify-end gap-0.5 lg:right-10`}
+					>
 						<button
 							className="rounded-md bg-[#293264] px-3 py-1 text-white"
 							onClick={submitQuiz}
@@ -93,7 +108,9 @@ function Quiz({
 																: "",
 													}}
 													className={` ${
-														submit ? "submitted opacity-60" : ""
+														submit
+															? "submitted cursor-not-allowed opacity-60"
+															: ""
 													} cursor-pointer rounded-lg border border-[#4D5B9E] px-4 py-1 font-medium`}
 												>
 													{decode(option)}

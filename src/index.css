@@ -63,3 +63,22 @@ input[type="radio"]:checked + label.submitted {
 	font-family: "Comic Sans MS", cursive, sans-serif;
 	margin-left: 0.5em;
 }
+
+@media (max-width: 768px) {
+	.menu-items {
+		transform: translateX(500px);
+		transition: transform 0.5s ease-in-out;
+		transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+		transition-duration: 0.5s;
+		transition-property: transform;
+	}
+}
+
+.menu-items.active {
+	transform: translateX(0px);
+	transform: translateY(40px);
+	transition: transform 0.5s ease-in-out;
+	transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+	transition-duration: 0.5s;
+	transition-property: transform;
+}

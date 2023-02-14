@@ -15,6 +15,7 @@ function App() {
 	const [reset, setReset] = useState(false);
 	const [submit, setSubmit] = useState(false);
 	const [loading, setLoading] = useState(false);
+	const [showMenu, setShowMenu] = useState(false);
 
 	const baseURL =
 		"https://opentdb.com/api.php?amount=5&difficulty=medium&type=multiple";
