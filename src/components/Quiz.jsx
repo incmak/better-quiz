@@ -44,7 +44,7 @@ function Quiz({
 					<div
 						className={`menu-items ${
 							menu ? "active" : ""
-						} absolute top-5 right-5 flex flex-col items-end justify-end gap-0.5 lg:right-10`}
+						} fixed top-5 right-5 flex flex-col items-end justify-end gap-0.5 lg:right-10`}
 					>
 						<button
 							className="rounded-md bg-[#293264] px-3 py-1 text-white"
