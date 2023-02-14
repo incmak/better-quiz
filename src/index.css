@@ -82,3 +82,30 @@ input[type="radio"]:checked + label.submitted {
 	transition-duration: 0.5s;
 	transition-property: transform;
 }
+.hamburger {
+	border: none;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.line {
+	background: rebeccapurple;
+	height: 4px;
+	width: 2rem;
+	transform-origin: left center;
+	transition: all ease-in 0.1s;
+}
+
+.active .line:nth-child(1) {
+	transform: rotate(45deg);
+}
+
+.active .line:nth-child(2) {
+	opacity: 0;
+}
+
+.active .line:nth-child(3) {
+	transform: translateY(3px) rotate(-45deg);
+}

@@ -30,15 +30,17 @@ function Quiz({
 				</div>
 			) : (
 				<>
-					<div
-						className="absolute top-4 right-4  md:hidden"
+					<button
+						id="hamburger"
+						className={`hamburger ${
+							menu ? "active" : ""
+						} absolute top-4  right-4 md:hidden`}
 						onClick={() => showMenu((menu) => !menu)}
 					>
-						<img
-							src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Hamburger_icon.svg"
-							alt="Menu"
-						/>
-					</div>
+						<div class="line"></div>
+						<div class="line"></div>
+						<div class="line"></div>
+					</button>
 					<div
 						className={`menu-items ${
 							menu ? "active" : ""
