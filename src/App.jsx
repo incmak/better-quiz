@@ -58,8 +58,6 @@ function App() {
 	const checkAnswers = (e) => {
 		e.preventDefault();
 		setSubmit(true);
-		console.log(responses);
-		console.log(correctAnswer);
 		let Score = 0;
 		for (let key in responses) {
 			if (responses[key] === correctAnswer[key]) {
